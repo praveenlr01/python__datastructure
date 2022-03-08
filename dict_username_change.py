@@ -8,10 +8,11 @@ while True:
         else:
             pw=input("Enter your password: ")
             db.update({un:pw})
+            print(db)
     elif opt==2:
         un=input("Enter your username: ")
         for i in db:
-            if i == un:
+            if i in un:
                 pw=input("Enter your password: ")
                 if pw==db[un]:
                     print("login sucessfully..")
@@ -53,9 +54,9 @@ while True:
                 else:
                    print("incorrect password.")
                    break
-            else:
-                print("incorrect username")
-                break
         else:
-            print("incorrect username.")
+            print("incorrect username")
             break
+    else:
+        print("incorrect username.")
+        break
